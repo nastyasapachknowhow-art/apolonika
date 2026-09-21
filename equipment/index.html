@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#eae9e5">
+    <meta name="description" content="Оборудование клиники APOLONICA: лазерные, RF-, ультразвуковые и диагностические системы для продуманного плана процедур.">
+    <meta property="og:title" content="Оборудование — APOLONICA">
+    <meta property="og:description" content="Технологии, которые работают внутри понятного медицинского плана.">
+    <meta property="og:type" content="website">
+    <title>Оборудование — APOLONICA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+    <style>
+      @font-face {
+        font-family: "Matahari Extended Clean";
+        src: url("../assets/matahariextended-400extreg.woff2") format("woff2"),
+             url("../assets/matahariextended-400extreg.woff") format("woff"),
+             url("../assets/matahariextended-400extreg.otf") format("opentype");
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        unicode-range: U+0000-009F, U+00A1-FFFF;
+      }
+
+      :root {
+        --paper: #eae9e5;
+        --milk: #fefefe;
+        --linen: #d8d3cc;
+        --pebble: #b3ada8;
+        --clay: #8b7a6a;
+        --espresso: #2a1d17;
+        --secondary: rgba(42, 29, 23, .62);
+        --line: rgba(42, 29, 23, .22);
+        --display: "Forum", Georgia, serif;
+        --body: "Matahari Extended Clean", Arial, sans-serif;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; overflow-x: hidden; background: var(--paper); color: var(--espresso); font-family: var(--body); font-size: 16px; }
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; }
+      h1, h2, h3, p { margin-top: 0; }
+      .page-width { width: min(1280px, calc(100% - 64px)); margin: 0 auto; }
+      .eyebrow { display: inline-flex; align-items: baseline; color: var(--secondary); font-size: 10px; font-weight: 500; letter-spacing: .15em; line-height: 1; text-transform: uppercase; }
+      .eyebrow.light { color: rgba(254,254,254,.78); }
+      .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 21px; background: var(--espresso); color: var(--milk); font-size: 10px; font-weight: 500; letter-spacing: .11em; text-transform: uppercase; transition: background .2s ease; }
+      .button:hover { background: var(--secondary); }
+
+      .header { position: relative; z-index: 5; background: var(--milk); border-bottom: 1px solid var(--line); }
+      .header-inner { height: 84px; display: grid; grid-template-columns: 210px 1fr 210px; align-items: center; gap: 20px; }
+      .logo { width: 156px; display: block; }
+      .nav { display: flex; justify-content: center; gap: clamp(18px, 3vw, 42px); font-size: 12px; letter-spacing: .08em; font-kerning: normal; font-variant-ligatures: none; text-transform: uppercase; }
+      .nav a { padding: 9px 0; }
+      .nav a:hover, .nav a[aria-current="page"] { color: var(--clay); }
+      .header-action { justify-self: end; padding: 11px 16px; background: var(--espresso); color: var(--milk); font-size: 10px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; }
+      .menu-toggle { display: none; border: 0; padding: 9px 0; background: transparent; color: var(--espresso); font: inherit; cursor: pointer; }
+      .menu-icon { display: grid; gap: 4px; width: 22px; }
+      .menu-icon span { display: block; height: 1px; background: currentColor; transition: transform .2s ease, opacity .2s ease; }
+      .menu-toggle[aria-expanded="true"] .menu-icon span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+      .menu-toggle[aria-expanded="true"] .menu-icon span:nth-child(2) { opacity: 0; }
+      .menu-toggle[aria-expanded="true"] .menu-icon span:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
+      .mobile-nav { display: none; border-top: 1px solid var(--line); background: var(--milk); }
+      .mobile-nav.is-open { display: block; }
+      .mobile-nav a { display: block; padding: 16px 0; border-bottom: 1px solid var(--line); font-size: 12px; letter-spacing: .08em; font-kerning: normal; font-variant-ligatures: none; text-transform: uppercase; }
+      .mobile-nav a:last-child { border-bottom: 0; }
+
+      .page-hero { padding: 96px 0 92px; }
+      .page-hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 9vw; align-items: end; }
+      .section-intro { display: block; }
+      .roman { color: var(--clay); font-family: var(--display); font-size: 62px; font-weight: 400; line-height: .75; }
+      h1 { max-width: 720px; margin: 28px 0 0; font-family: var(--display); font-size: clamp(62px, 8vw, 126px); font-weight: 400; letter-spacing: 0; line-height: .82; }
+      h1 em { color: var(--secondary); font-style: normal; }
+      .page-hero-copy { max-width: 390px; margin-bottom: 7px; color: var(--secondary); font-size: 15px; line-height: 1.55; }
+      .page-hero-copy strong { color: var(--espresso); font-weight: 400; }
+
+      .equipment-page { padding-bottom: 132px; }
+      .equipment-intro { display: grid; grid-template-columns: 1.1fr .9fr; gap: 9vw; align-items: end; padding: 28px 0 42px; border-top: 1px solid var(--espresso); }
+      .equipment-intro h2 { max-width: 620px; margin: 0; font-family: var(--display); font-size: clamp(42px, 5vw, 72px); font-weight: 400; letter-spacing: 0; line-height: .9; }
+      .equipment-intro p { max-width: 380px; margin: 0; color: var(--secondary); font-size: 14px; line-height: 1.5; }
+      .equipment-index { display: flex; flex-wrap: wrap; gap: 0 23px; margin: 0 0 94px; padding: 17px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .equipment-index a { color: var(--secondary); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; transition: color .2s ease; }
+      .equipment-index a:hover { color: var(--espresso); }
+
+      .equipment-group + .equipment-group { margin-top: 108px; }
+      .equipment-group-head { display: flex; justify-content: space-between; gap: 40px; align-items: end; margin-bottom: 27px; padding-bottom: 16px; border-bottom: 1px solid var(--espresso); }
+      .equipment-group-head h2 { margin: 0; font-family: var(--display); font-size: clamp(42px, 5vw, 72px); font-weight: 400; letter-spacing: 0; line-height: .86; white-space: nowrap; }
+      .equipment-group-head p { max-width: 330px; margin: 0; color: var(--secondary); font-size: 14px; line-height: 1.5; }
+      .equipment-entry { display: grid; grid-template-columns: 1.1fr .9fr; min-height: 470px; border-bottom: 1px solid var(--line); }
+      .equipment-entry + .equipment-entry { margin-top: 28px; }
+      .equipment-entry.reverse { grid-template-columns: .9fr 1.1fr; }
+      .equipment-entry.reverse .equipment-media { order: 2; }
+      .equipment-entry.reverse .equipment-copy { padding-right: clamp(20px, 5vw, 72px); padding-left: 0; }
+      .equipment-media { display: flex; width: 100%; height: 470px; align-items: center; justify-content: center; overflow: hidden; background: transparent; }
+      .equipment-media img { display: block; width: 100%; height: 100%; max-height: none; object-fit: contain; mix-blend-mode: multiply; }
+      .equipment-media--smartxide img { mix-blend-mode: normal; }
+      .equipment-copy { display: flex; flex-direction: column; justify-content: center; padding: 38px clamp(20px, 5vw, 72px); }
+      .equipment-copy-label { display: block; margin-bottom: 19px; color: var(--clay); font-size: 10px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; }
+      .equipment-copy h3 { max-width: 450px; margin: 0 0 21px; font-family: var(--display); font-size: clamp(45px, 5.2vw, 78px); font-weight: 400; letter-spacing: 0; line-height: .86; }
+      .equipment-copy p { max-width: 390px; margin: 0 0 28px; color: var(--secondary); font-size: 16px; line-height: 1.55; }
+      .equipment-source { display: inline-flex; align-items: center; gap: 9px; width: fit-content; padding-bottom: 8px; border-bottom: 1px solid currentColor; color: var(--espresso); font-size: 10px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; }
+      .equipment-source:hover { color: var(--clay); }
+      .equipment-source span { font-family: Arial, sans-serif; font-size: 17px; line-height: .8; }
+
+      .equipment-cta { padding: 62px 0; background: var(--espresso); color: var(--milk); }
+      .equipment-cta-inner { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 46px; }
+      .equipment-cta h2 { max-width: 520px; margin: 0; font-family: var(--display); font-size: clamp(34px, 4vw, 57px); font-weight: 400; letter-spacing: 0; line-height: .92; }
+      .equipment-cta p { max-width: 310px; margin: 0; color: var(--pebble); font-size: 13px; line-height: 1.5; }
+      .equipment-cta .button { background: var(--milk); color: var(--espresso); }
+      .equipment-cta .button:hover { background: var(--linen); }
+      .contact-footer { position: relative; overflow: hidden; isolation: isolate; background: var(--espresso); color: var(--milk); border-top: 1px solid rgba(254,254,254,.22); }
+      .contact-footer-inner { position: relative; width: min(1280px, calc(100% - 64px)); min-height: 620px; margin: 0 auto; padding: 72px 0 86px; }
+      .contact-panel { position: relative; display: flex; min-height: 0; flex-direction: column; overflow: visible; background: transparent; border: 0; }
+      .contact-details { z-index: 2; width: min(520px, 49%); }
+      .contact-panel-head { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; align-items: center; margin: 0; padding: 0 0 20px; border-bottom: 1px solid rgba(254,254,254,.34); }
+      .contact-panel-name { color: rgba(254,254,254,.74); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+      .contact-details-main { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: flex-start; padding: 82px 0 0; }
+      .contact-title { max-width: 430px; margin: 0 0 38px; color: var(--milk); font-family: var(--display); font-size: clamp(48px, 5vw, 76px); font-weight: 400; letter-spacing: 0; line-height: .94; }
+      .contact-list { display: grid; gap: 11px; max-width: 540px; color: var(--milk); font-size: 15px; line-height: 1.4; }
+      .contact-list a:hover { color: var(--linen); }
+      .contact-list .muted { color: var(--pebble); }
+      .contact-address { white-space: nowrap; }
+      .contact-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: 35px; }
+      .contact-actions .button { background: var(--milk); color: var(--espresso); }
+      .contact-actions .button:hover { background: var(--linen); color: var(--espresso); }
+      .contact-route { padding-bottom: 7px; border-bottom: 1px solid rgba(254,254,254,.68); color: var(--milk); font-size: 11px; font-weight: 500; letter-spacing: .09em; text-transform: uppercase; }
+      .contact-route:hover { color: var(--linen); }
+      .contact-map-panel { position: absolute; z-index: 0; top: 0; bottom: 0; left: 50%; width: 100vw; padding: 0; transform: translateX(-50%); }
+      .contact-map-panel .contact-panel-head { display: none; }
+      .contact-map-panel::after { position: absolute; z-index: 1; inset: 0; background: linear-gradient(90deg, rgba(42,29,23,.91) 0%, rgba(42,29,23,.62) 40%, rgba(42,29,23,.16) 100%), linear-gradient(0deg, rgba(42,29,23,.4), transparent 58%); content: ""; pointer-events: none; }
+      .contact-map { position: absolute; inset: 0; margin: 0; background: var(--clay); border: 0; }
+      .contact-map iframe { display: block; width: 100%; height: 100%; min-height: 0; border: 0; opacity: .84; filter: grayscale(.45) sepia(.08) contrast(.95) brightness(.92); }
+      .footer { padding: 24px 0; background: var(--espresso); border-top: 1px solid rgba(254,254,254,.3); color: var(--pebble); }
+      .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 22px; white-space: nowrap; font-size: 11px; letter-spacing: .09em; text-transform: uppercase; }
+      .footer-legal { color: var(--pebble); text-decoration: none; }
+
+      @media (max-width: 860px) {
+        .page-width { width: min(100% - 40px, 680px); }
+        .header-inner { height: 70px; grid-template-columns: 1fr auto 1fr; }
+        .logo-link { grid-column: 2; justify-self: center; }
+        .logo { width: 180px; }
+        .nav, .header-action { display: none; }
+        .menu-toggle { display: inline-flex; grid-column: 1; grid-row: 1; justify-self: start; align-items: center; }
+        .mobile-nav .page-width { width: min(100% - 40px, 680px); }
+        .page-hero { padding: 75px 0 66px; }
+        .page-hero-grid { grid-template-columns: 1fr; gap: 42px; }
+        h1 { font-size: clamp(44px, 12vw, 72px); overflow-wrap: break-word; }
+        .page-hero-copy { max-width: 100%; }
+        .page-hero-copy { margin: 0; }
+        .equipment-page { padding-bottom: 90px; }
+        .equipment-intro { grid-template-columns: 1fr; gap: 24px; padding-bottom: 30px; }
+        .equipment-index { gap: 15px 19px; margin-bottom: 68px; }
+        .equipment-group + .equipment-group { margin-top: 75px; }
+        .equipment-group-head { display: block; margin-bottom: 20px; }
+        .equipment-group-head p { margin-top: 18px; }
+        .equipment-entry, .equipment-entry.reverse { display: block; min-height: 0; }
+        .equipment-entry + .equipment-entry { margin-top: 42px; }
+        .equipment-entry.reverse .equipment-media { order: initial; }
+        .equipment-media, .equipment-entry.reverse .equipment-media { height: 300px; }
+        .equipment-copy, .equipment-entry.reverse .equipment-copy { padding: 28px 0 38px; }
+        .equipment-copy h3 { font-size: clamp(46px, 12vw, 67px); }
+        .equipment-copy p { font-size: 14px; }
+        .equipment-cta { padding: 49px 0; }
+        .equipment-cta-inner { grid-template-columns: 1fr; gap: 23px; }
+        .equipment-cta .button { justify-self: start; }
+        .contact-footer-inner { width: min(100% - 40px, 680px); min-height: 660px; padding: 48px 0 66px; }
+        .contact-panel { min-height: 0; }
+        .contact-details { width: 100%; }
+        .contact-panel-head { margin: 0; }
+        .contact-details-main { padding: 58px 0 0; }
+        .contact-map-panel { min-height: 0; padding-bottom: 0; }
+        .contact-map-panel::after { background: linear-gradient(90deg, rgba(42,29,23,.96) 0%, rgba(42,29,23,.78) 65%, rgba(42,29,23,.52) 100%), linear-gradient(0deg, rgba(42,29,23,.58), transparent 62%); }
+        .contact-map { min-height: 0; margin: 0; }
+        .footer-inner { white-space: normal; }
+      }
+
+      @media (max-width: 470px) {
+        .page-width { width: calc(100% - 32px); }
+        h1 { font-size: clamp(40px, 11vw, 52px); }
+        .equipment-intro h2 { font-size: 45px; }
+        .equipment-group-head h2 { font-size: clamp(22px, 7.4vw, 36px); white-space: nowrap; }
+        .equipment-media, .equipment-entry.reverse .equipment-media { height: 240px; }
+        .contact-address { white-space: normal; }
+        .footer-inner { flex-direction: column; gap: 9px; }
+      }
+    
+      .logo-wordmark { display: block; font-family: var(--display); font-size: 25px; letter-spacing: .18em; line-height: 1; text-transform: uppercase; color: var(--espresso); }
+      @media (max-width: 860px) { .logo-wordmark { font-size: 22px; } }
+</style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Оборудование клиники APOLONICA",
+        "description": "Лазерные, RF-, ультразвуковые и диагностические системы клиники APOLONICA.",
+        "isPartOf": { "@type": "MedicalClinic", "name": "APOLONICA" },
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "item": { "@type": "Product", "name": "DEKA Luxea Plus", "manufacturer": { "@type": "Organization", "name": "DEKA" }, "url": "https://dekalaser.com/products/luxea-plus/" } },
+            { "@type": "ListItem", "position": 2, "item": { "@type": "Product", "name": "DEKA Motus AX", "manufacturer": { "@type": "Organization", "name": "DEKA" }, "url": "https://dekalaser.com/products/motus-ax/" } },
+            { "@type": "ListItem", "position": 3, "item": { "@type": "Product", "name": "DEKA SmartXide PRO", "manufacturer": { "@type": "Organization", "name": "DEKA" }, "url": "https://dekalaser.com/products/smartxide-pro/" } },
+            { "@type": "ListItem", "position": 4, "item": { "@type": "Product", "name": "Ultraformer III", "manufacturer": { "@type": "Organization", "name": "Classys" }, "url": "https://classys.com/product/ultraformer-lll/" } },
+            { "@type": "ListItem", "position": 5, "item": { "@type": "Product", "name": "Geneo", "manufacturer": { "@type": "Organization", "name": "Pollogen" }, "url": "https://pollogen.com/products/geneo/" } },
+            { "@type": "ListItem", "position": 6, "item": { "@type": "Product", "name": "Lutronic Infini", "manufacturer": { "@type": "Organization", "name": "Lutronic" }, "url": "https://www.lutronic-europe.com/" } },
+            { "@type": "ListItem", "position": 7, "item": { "@type": "Product", "name": "Voluson S8", "manufacturer": { "@type": "Organization", "name": "GE HealthCare" }, "url": "https://www.gehealthcare.com/en-us/products/ultrasound/voluson/voluson-s8" } }
+          ]
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalClinic",
+        "name": "APOLONICA",
+        "url": "https://apolonica-clinic.ru/",
+        "telephone": "+7 (499) 450-25-25",
+        "email": "molodosti.klinika@mail.ru",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Москва",
+          "streetAddress": "Шелепихинская набережная, 34 к.1, зд.5",
+          "addressCountry": "RU"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 55.760965,
+          "longitude": 37.513565
+        },
+        "openingHoursSpecification": [{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "09:00",
+          "closes": "21:00"
+        }],
+        "sameAs": ["https://t.me/apolonica_clinic"]
+      }
+    </script>
+  </head>
+  <body><header class="header">
+<div class="page-width header-inner">
+<a class="logo-link" href="../index.html" aria-label="APOLONICA — на главную"><img class="logo" src="../assets/logo-coffee.svg" alt="APOLONICA" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-wordmark',textContent:'APOLONICA'}))"></a>
+<nav class="nav" aria-label="Основная навигация">
+<a href="../index.html#about">О&nbsp;клинике</a>
+<a href="../index.html#visit">Первый визит</a>
+<a href="../services/index.html">Услуги и цены</a>
+<a href="#top" aria-current="page">Оборудование</a>
+<a href="../team/index.html">Врачи</a>
+</nav>
+<a class="header-action" href="../index.html#booking">Записаться</a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Открыть меню"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span></button>
+</div>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Мобильная навигация">
+<div class="page-width">
+<a href="../index.html#about">О&nbsp;клинике</a>
+<a href="../index.html#visit">Первый визит</a>
+<a href="../services/index.html">Услуги и цены</a>
+<a href="#top">Оборудование</a>
+<a href="../team/index.html">Врачи</a>
+<a href="../index.html#booking">Записаться</a>
+</div>
+</nav>
+</header>
+<main id="top">
+<section class="page-hero" aria-labelledby="page-title">
+<div class="page-width page-hero-grid">
+<div><div class="section-intro"><span class="eyebrow">Технологии и&nbsp;экспертиза</span></div><h1 id="page-title">Оборудование,<br><em>встроенное</em> в&nbsp;план.</h1></div>
+<p class="page-hero-copy"><strong>Не&nbsp;технология ради технологии.</strong> Мы&nbsp;выбираем аппараты по&nbsp;задаче пациента и&nbsp;встраиваем их&nbsp;в&nbsp;понятный диагностический и&nbsp;лечебный маршрут.</p>
+</div>
+</section>
+<section class="equipment-page" aria-labelledby="equipment-title">
+<div class="page-width">
+<div class="equipment-intro"><h2 id="equipment-title">Аппарат становится полезным внутри точного решения.</h2><p>Здесь собраны технологии, которые используются в&nbsp;клинике для эстетической медицины, диагностики и&nbsp;акушерско-гинекологических исследований.</p>
+</div>
+<nav class="equipment-index" aria-label="Навигация по оборудованию"><a href="#luxea">I&nbsp;Luxea</a><a href="#motus">II&nbsp;Motus</a><a href="#smartxide">III&nbsp;SmartXide</a><a href="#ultraformer">IV&nbsp;Ultraformer</a><a href="#infini">V&nbsp;Infini</a><a href="#geneo">VI&nbsp;Geneo</a><a href="#voluson">VII&nbsp;Voluson</a></nav>
+<section class="equipment-group" aria-labelledby="laser-title">
+<div class="equipment-group-head"><h2 id="laser-title">Лазерные системы</h2><p>Технологии для работы с&nbsp;качеством кожи, текстурой и&nbsp;нежелательными волосами.</p>
+</div>
+<article class="equipment-entry" id="luxea"><div class="equipment-media"><img src="../assets/equipment-luxea.webp" alt="Аппарат DEKA Luxea Plus" loading="eager" decoding="async"></div><div class="equipment-copy"><span class="equipment-copy-label">I &middot; модульная платформа</span><h3>DEKA Luxea Plus</h3><p>Модульная платформа для IPL-, лазерных и&nbsp;RF-процедур в&nbsp;дерматологии и&nbsp;эстетической медицине. Позволяет подобрать технологию под конкретную задачу кожи.</p>
+<a class="equipment-source" href="https://dekalaser.com/products/luxea-plus/" target="_blank" rel="noopener noreferrer">Сайт производителя <span aria-hidden="true">↗</span></a></div></article>
+<article class="equipment-entry reverse" id="motus"><div class="equipment-media"><img src="../assets/equipment-motus.webp" alt="Аппарат DEKA Motus AX" loading="lazy" decoding="async"></div><div class="equipment-copy"><span class="equipment-copy-label">II &middot; лазерная эпиляция</span><h3>DEKA Motus AX</h3><p>Александритовая лазерная система с&nbsp;технологией Moveo&nbsp;&mdash; точная работа и&nbsp;комфортное проведение процедуры.</p>
+<a class="equipment-source" href="https://dekalaser.com/products/motus-ax/" target="_blank" rel="noopener noreferrer">Сайт производителя <span aria-hidden="true">↗</span></a></div></article>
+<article class="equipment-entry" id="smartxide"><div class="equipment-media equipment-media--smartxide"><img src="../assets/equipment-smartxide-transparent.webp" alt="Аппарат DEKA SmartXide PRO" loading="lazy" decoding="async"></div><div class="equipment-copy"><span class="equipment-copy-label">III &middot; фракционный CO₂-лазер</span><h3>DEKA SmartXide PRO</h3><p>Фракционная CO₂-лазерная система для работы с&nbsp;рельефом кожи, рубцами и&nbsp;признаками фотостарения.</p>
+<a class="equipment-source" href="https://dekalaser.com/products/smartxide-pro/" target="_blank" rel="noopener noreferrer">Сайт производителя <span aria-hidden="true">↗</span></a></div></article>
+</section>
+<section class="equipment-group" aria-labelledby="rf-title">
+<div class="equipment-group-head"><h2 id="rf-title">Ультразвук и&nbsp;RF</h2><p>Глубокое и&nbsp;контролируемое воздействие в&nbsp;рамках продуманного протокола.</p>
+</div>
+<article class="equipment-entry reverse" id="ultraformer"><div class="equipment-media"><img src="../assets/equipment-ultraformer.webp" alt="Аппарат Ultraformer III" loading="lazy" decoding="async"></div><div class="equipment-copy"><span class="equipment-copy-label">IV &middot; сфокусированный ультразвук</span><h3>Ultraformer III</h3><p>Микро- и&nbsp;макрофокусированный ультразвук для работы с&nbsp;глубокими слоями тканей и&nbsp;моделирования овала.</p>
+<a class="equipment-source" href="https://classys.com/product/ultraformer-lll/" target="_blank" rel="noopener noreferrer">Сайт производителя <span aria-hidden="true">↗</span></a></div></article>
+<article class="equipment-entry" id="infini"><div class="equipment-media"><img src="../assets/equipment-lutronic-infini.webp" alt="Аппарат Lutronic Infini" loading="lazy" decoding="async"></div><div class="equipment-copy"><span class="equipment-copy-label">V &middot; микроигольчатая RF-система</span><h3>Lutronic Infini</h3><p>Микроигольчатая RF-система для повышения упругости и&nbsp;улучшения текстуры кожи с&nbsp;контролируемым воздействием.</p>
+<a class="equipment-source" href="https://www.lutronic-europe.com/" target="_blank" rel="noopener noreferrer">Сайт производителя <span aria-hidden="true">↗</span></a></div></article>
+</section>
+<section class="equipment-group" aria-labelledby="care-title">
+<div class="equipment-group-head"><h2 id="care-title">Комплексный уход</h2><p>Мягкие протоколы, которые поддерживают качество кожи и&nbsp;естественное обновление.</p>
+</div>
+<article class="equipment-entry" id="geneo"><div class="equipment-media"><img src="../assets/equipment-geneo.webp" alt="Аппарат Geneo" loading="lazy" decoding="async"></div><div class="equipment-copy"><span class="equipment-copy-label">VI &middot; комплексный уход</span><h3>Geneo</h3><p>Мягкая эксфолиация, насыщение кожи кислородом и&nbsp;поддержка естественного обновления в&nbsp;рамках одного протокола.</p>
+<a class="equipment-source" href="https://pollogen.com/products/geneo/" target="_blank" rel="noopener noreferrer">Сайт производителя <span aria-hidden="true">↗</span></a></div></article>
+</section>
+<section class="equipment-group" aria-labelledby="diagnostics-title">
+<div class="equipment-group-head"><h2 id="diagnostics-title">Диагностика</h2><p>Точная визуализация, с&nbsp;которой начинается понятный план наблюдения.</p>
+</div>
+<article class="equipment-entry reverse" id="voluson"><div class="equipment-media"><img src="../assets/equipment-voluson.webp" alt="Аппарат Voluson S8" loading="lazy" decoding="async"></div><div class="equipment-copy"><span class="equipment-copy-label">VII &middot; ультразвуковая диагностика</span><h3>Voluson S8</h3><p>Цифровая ультразвуковая система для детальных 2D-, 3D- и&nbsp;4D-исследований в&nbsp;акушерстве и&nbsp;гинекологии.</p>
+<a class="equipment-source" href="https://www.gehealthcare.com/en-us/products/ultrasound/voluson/voluson-s8" target="_blank" rel="noopener noreferrer">Сайт производителя <span aria-hidden="true">↗</span></a></div></article>
+</section>
+</div>
+</section>
+<section class="equipment-cta" aria-labelledby="equipment-cta-title"><div class="page-width equipment-cta-inner"><span class="eyebrow light">Следующий шаг</span><div><h2 id="equipment-cta-title">Подберём технологию под вашу задачу.</h2><p>На&nbsp;консультации врач объяснит, какие методы действительно нужны именно в&nbsp;вашем случае.</p>
+</div><a class="button" href="../index.html#booking">Записаться</a></div></section>
+</main>
+<footer class="contact-footer" id="contacts" aria-labelledby="contacts-title">
+<div class="page-width contact-footer-inner">
+<section class="contact-panel contact-details" aria-labelledby="contacts-title">
+<div class="contact-panel-head"><span class="contact-panel-name">Контакты</span></div>
+<div class="contact-details-main">
+<div class="contact-list">
+<a href="tel:+74994502525">+7 (499) 450-25-25</a>
+<a href="mailto:molodosti.klinika@mail.ru">molodosti.klinika@mail.ru</a>
+<span class="muted contact-address">г. Москва, Шелепихинская наб., 34 к.1, зд.5</span>
+<span class="muted">Ежедневно, 9:00&ndash;21:00</span>
+</div>
+<div class="contact-actions"><a class="contact-route" href="https://yandex.ru/maps/?rtext=~55.760965%2C37.513565&amp;rtt=auto" target="_blank" rel="noopener noreferrer">Построить маршрут&nbsp;↗</a><a class="contact-route" href="https://t.me/apolonica_clinic" target="_blank" rel="noopener noreferrer">Telegram&nbsp;↗</a></div>
+</div>
+</section>
+<section class="contact-panel contact-map-panel" aria-label="Москва · маршрут"><div class="contact-map"><iframe title="APOLONICA на карте Москвы" src="https://yandex.ru/map-widget/v1/?ll=37.513565%2C55.760965&amp;z=16&amp;l=map&amp;pt=37.513565%2C55.760965%2Cpm2rdm" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div></section>
+</div>
+<div class="footer"><div class="page-width footer-inner"><span>ООО «Клиника молодости»</span><a class="footer-legal" href="https://disk.yandex.ru/i/jOOJc6LLpZq4Rw" target="_blank" rel="noreferrer noopener">Лицензия · Политика обработки персональных данных</a><span>Москва &middot; 2026</span></div></div>
+</footer>
+<script>
+      (() => {
+        const toggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('#mobile-nav');
+        if (!toggle || !menu) return;
+        const setMenuState = (isOpen) => { toggle.setAttribute('aria-expanded', String(isOpen)); toggle.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню'); menu.classList.toggle('is-open', isOpen); };
+        toggle.addEventListener('click', () => setMenuState(toggle.getAttribute('aria-expanded') !== 'true'));
+        menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenuState(false)));
+      })();
+    </script></body>
+</html>
